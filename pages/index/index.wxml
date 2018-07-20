@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
+  <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -9,5 +9,41 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view> -->
+  <view class="searchview" style='width:100%'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="row">
+        <view class='col'>
+          <view class='col-5'></view>
+          <view class='col-5'><text>行情曲线</text></view>
+        </view>
+      </view>
+      <view class='row'>
+        <view class='col'>
+          <view class='col-1'></view>
+          <view class='col-6'>
+            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          时间段: {{date}}
+            </picker>
+          </view>
+          <view class='col-5'>
+            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          至: {{date}}
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class='row'>
+        <view class='select_box'>
+          <view class='select' catchtap='selectTap'>
+            <text class='select_text'>{{selectData[index]}}</text>
+            <image class='select_img {{show&&"select_img_rotate"}}' src='/image/icon/find-off.png'></image>         
+          </view>
+          <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+            <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </form>
   </view>
 </view>

@@ -1,12 +1,52 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/tab2/index",
+    "pages/tab3/index",
+    "pages/tab4/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar注释":{
+    "pagePath":"导航按钮跳转页面路径",
+    "iconPath": "未选中时按钮图标路径，可不填",
+    "selectedIconPath": "选中时图标路径，可不填",
+    "text": "图标下方文字，可不填",
+    "图标小于40k": ""
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "资讯",
+      "iconPath": "",
+      "selectedIconPath": ""
+    },
+    {
+     "pagePath":"pages/tab2/index",
+     "text":"茶易宝",
+     "iconPath": "",
+     "selectedIconPath": ""
+    },
+    {
+      "pagePath": "pages/tab3/index",
+      "text": "购物车",
+      "iconPath": "",
+      "selectedIconPath": ""
+    },
+    {
+      "pagePath": "pages/tab4/index",
+      "text": "我的",
+      "iconPath": "",
+      "selectedIconPath": ""
+    }]
+  },
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 10000
   }
 }

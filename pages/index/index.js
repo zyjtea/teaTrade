@@ -7,13 +7,31 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    date:'',
+    show: false,//控制下拉列表的显示隐藏，false隐藏、true显示
+    selectData: ['1', '2', '3', '4', '5', '6'],//下拉列表的数据
+    index: 0
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  // 点击下拉显示框
+  selectTap(){
+    this.setData({
+      show: !this.data.show
+    });
+  },
+  // 点击下拉列表
+  optionTap(e){
+    let Index= e.currentTarget.dataset.index;//获取点击的下拉列表的下标
+    this.setData({
+      index: Index,
+      show: !this.data.show
+    });
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -49,6 +67,12 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
     })
   }
 })

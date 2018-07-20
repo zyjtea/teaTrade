@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "/exindex.wxss";
 .container {
   height: 100%;
   display: flex;
@@ -7,4 +8,10 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+page{
+  height: 100%;
+  width: 100%; 
+   margin:0;
+  padding: 0;
+}
