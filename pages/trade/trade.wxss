@@ -1,0 +1,81 @@
+/* pages/tradepage/trade.wxss */
+
+.search-view {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 500;
+  width: 100%;
+  height: 70rpx;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+}
+.serarch-content {
+  position: fixed;
+  top: 0;
+  z-index: 501;
+  background:#fff;
+  width: 100%;
+  height: 70rpx;
+  padding: 0 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-icon-view{
+  width:70rpx;
+  height:70rpx;
+  background-color:white;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+
+.search-icon {
+  margin-left: 15rpx;
+}
+
+.search-input {
+  width: 450rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  background-color: white;
+}
+
+.search-btn {
+  width: 120rpx;
+  height: 60rpx;
+  margin-left: 0;
+  background-color: blueviolet;
+  font-size: 28rpx;
+  border-top-left-radius: 0rpx;
+  border-bottom-left-radius: 0rpx;
+  color: #fff;
+  border: none;
+}
+
+.name1{
+  height: 70rpx；
+  width:100%；
+  backgroud-color:#fff;
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.more-btn {
+  width: 150rpx;
+  height: 70rpx;
+  background-color:#fff;
+  margin-right: 15rpx;
+  font-size: 28rpx;
+  border-top-left-radius: 0rpx;
+  border-bottom-left-radius: 0rpx;
+  color:black;
+  border: none;
+}
