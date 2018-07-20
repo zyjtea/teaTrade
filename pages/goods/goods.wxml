@@ -1,0 +1,11 @@
+<view>
+  <view class='goodbujv'> 
+    <image src="../images/cha1.jpg"> </image>
+    <view class='good-text'>
+      <text class='goodname'>{{good}}</text>
+      <text class='price'>价格:￥800</text>
+      <text class='adv'>优点：***</text>
+      <button class='buy' bindtap="buy">购买</button>
+    </view>
+  </view>
+</view>

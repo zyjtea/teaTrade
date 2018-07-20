@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/good-table/good-table",
+    "pages/goods/goods",
     "pages/index/index",
     "pages/logs/logs"
   ],
