@@ -1,21 +1,77 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.title-list navigator {
+        display: flex-end;
+        flex-flow: row;
+         justify-content:space-between;
+         padding: 30rpx 0;
+         border-bottom: 1rpx solid #e8e8e8;
+         background-color: rgb(98, 161, 106);
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.title-list navigator image{
+        height: 100rpx;
+        width: 100rpx;
+}
+.title-list navigator text{
+        font-size: 50rpx;
+        direction: ltr;
+        text-align: left;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.setup-list {
+        padding: 0 30rpx;
+}
+.setup-list navigator {
+        display: flex;
+        flex-flow: row;
+         justify-content:space-between;
+         padding: 30rpx 0;
+         border-bottom: 1rpx solid #e8e8e8;
 }
 
-.usermotto {
-  margin-top: 200px;
+
+.setup-list navigator text{
+        font-size: 30rpx;
+        direction: ltr;
+        text-align: left;
 }
+.setup-list navigator image{
+        height: 35rpx;
+        width: 35rpx;
+}
+.quit {
+      padding: 30rpx ;
+}
+.quit text{
+        width: 100%;
+        padding: 18rpx 0;
+        background-color: rgba(217, 42, 42, 1);
+        display: flex;
+        font-size: 30rpx;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10rpx;
+}
+
+
+.maijia-list navigator {
+        display: flex-end;
+        flex-flow: row;
+         justify-content:space-between;
+         padding: 30rpx 0;
+         border-bottom: 1rpx solid #e8e8e8;
+         background-color: rgb(98, 161, 106);
+}
+
+.maijia-list navigator image{
+        height: 100rpx;
+        width: 100rpx;
+}
+.maijia-list navigator text{
+        font-size: 50rpx;
+        direction: ltr;
+        text-align: left;
+}
+
+

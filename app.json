@@ -1,7 +1,13 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/buiness/buiness",
+    "pages/help/help",
+    "pages/leve/leve",
+    "pages/rule/rule",
+    "pages/station/station"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
