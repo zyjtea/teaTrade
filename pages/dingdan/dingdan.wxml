@@ -1,0 +1,71 @@
+
+<view bindtap="allOrderPage" class="allOrder">
+	<text class="allOrder-left">我的订单</text>
+	<text class="allOrder-right">查看全部订单</text>
+</view>
+<view class="navTopList">
+	<view class="ywc order-info">
+		<view class="ywc-icon active"></view>
+		<text class="ywc-txt active">已完成</text>
+	</view>
+	<view class="dfk order-info">
+		<view class="dfk-icon"></view>
+		<text class="dfk-txt">待付款</text>
+	</view>
+	<view class="dfh order-info">
+		<view class="dfh-icon"></view>
+		<text class="dfh-txt">待发货</text>
+	</view>
+	<view class="dsh order-info">
+		<view class="dsh-icon"></view>
+		<text class="dsh-txt">待收货</text>
+	</view>
+	<view class="yqx order-info">
+		<view class="yqx-icon"></view>
+		<text class="yqx-txt">已取消</text>
+	</view>
+	<view class="tkz order-info">
+		<view class="tkz-icon"></view>
+		<text class="tkz-txt">退款中</text>
+	</view>
+</view>
+<view bindtap="toOrderDetail" class="orderDetails">
+	<view class="orderListTitle">
+		<view class="userImg"><image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532062326948&di=ff7f2fc09fad4d920fc072fc0db21c21&imgtype=0&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140402%2Fbki-20140402154858-1607102354.jpg"></image></view>
+		<text class="userName">天福茗茶</text>
+		<text class="orderStatus">交易成功</text>
+	</view>
+	<view class="orderListDetails">
+		<view class="productImg">
+			<image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532062638917&di=52497a6c5d1054d924fe7e1621ae1e6d&imgtype=0&src=http%3A%2F%2Fimg11.360buyimg.com%2Fn1%2Fs450x450_jfs%2Ft166%2F57%2F637014846%2F239916%2Fbe56313%2F5392b81cN50355dc0.jpg"></image>
+		</view>
+		<view class="productInfo">
+			<view class="productTitle">台湾冻顶乌龙茶高山茶</view>
+			<text class="productPrice">￥128.00</text>
+			<text class="productQuantity">x1</text>
+		</view>
+	</view>
+	<view class="productCount">
+		<view>合计：￥<text>128.00</text></view>
+	</view>
+</view>	
+<view class="orderDetails">
+	<view class="orderListTitle">
+		<view class="userImg"><image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532062326948&di=ff7f2fc09fad4d920fc072fc0db21c21&imgtype=0&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140402%2Fbki-20140402154858-1607102354.jpg"></image></view>
+		<text class="userName">天福茗茶</text>
+		<text class="orderStatus">交易成功</text>
+	</view>
+	<view class="orderListDetails">
+		<view class="productImg">
+			<image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532066710683&di=114e8d9d79aac2bb50c4c8f122bec25a&imgtype=0&src=http%3A%2F%2Fd6.yihaodianimg.com%2FN10%2FM0A%2F15%2FB2%2FChEi21hy7XKAO43rAAdW05WlxJI13700_380x380.jpg"></image>
+		</view>
+		<view class="productInfo">
+			<view class="productTitle">银针茉莉大白毫花茶茶叶 礼盒精装</view>
+			<text class="productPrice">￥300.00</text>
+			<text class="productQuantity">x1</text>
+		</view>
+	</view>
+	<view class="productCount">
+		<view>合计：￥<text>300.00</text></view>
+	</view>
+</view>	

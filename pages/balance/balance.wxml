@@ -1,0 +1,21 @@
+<!--pages/balance/balance.wxml-->
+<view class="container">
+  <view class='userbox' style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.3))'>
+  </view>
+  <view class='a-item'>
+    <wxc-icon type='yen' size='{{iconSize-10}}' color='#666666' style='margin:10rpx 0 10rpx 0;'></wxc-icon>
+  </view>
+  <view class='my'>
+    账户余额（元）:
+    <view style='padding: 0 10rpx;color: #666666;font-weight: bold;'> balance{{balance}} </view>
+   </view>
+</view>
+
+<view class="container">
+  <view class='userbox' style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.3))'>
+  </view>
+  <view class='a-item'>
+    <wxc-icon type='yen' size='{{iconSize-10}}' color='#666666' style='margin:1rpx 0 1rpx 0;'></wxc-icon>
+  </view>
+    <navigator url="/pages/rechange/rechange">充值</navigator>
+</view>

@@ -1,10 +1,34 @@
 {
   "pages":[
+    "pages/my_index/index",
     "pages/tab1/index",
-    "pages/logs/logs",
     "pages/tab2/index",
     "pages/tab3/index",
-    "pages/tab4/index"
+    "pages/tab4/index",
+    "pages/address-add/address-add",
+    "pages/balance/balance",
+    "pages/buiness/buiness",
+    "pages/daifahuo/daifahuo",
+    "pages/daifukuan/daifukuai",
+    "pages/daishohuo/daishouhuo",
+    "pages/dingdan/dingdan",
+    "pages/good-table/good-table",
+    "pages/goods/goods",
+    "pages/help/help",
+    "pages/jpzx/jpzx",
+    "pages/kefu/kefu",
+    "pages/leve/leve",
+    "pages/order/order",
+    "pages/rechange/rechange",
+    "pages/rule/rule",
+    "pages/select-address/select-address",
+    "pages/shop/shop",
+    "pages/shopping/shopping",
+    "pages/station/station",
+    "pages/trade/trade",
+    "pages/tuikaunzhong/tuikuaizhong",
+    "pages/xiaoxi/xiaoxi",
+    "pages/yiquxiao/yiquxiao"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -27,19 +51,19 @@
       "selectedIconPath": ""
     },
     {
-     "pagePath":"pages/tab2/index",
+     "pagePath":"pages/trade/trade",
      "text":"茶易宝",
      "iconPath": "",
      "selectedIconPath": ""
     },
     {
-      "pagePath": "pages/tab3/index",
+      "pagePath": "pages/shopping/shopping",
       "text": "购物车",
       "iconPath": "",
       "selectedIconPath": ""
     },
     {
-      "pagePath": "pages/tab4/index",
+      "pagePath": "pages/my_index/index",
       "text": "我的",
       "iconPath": "",
       "selectedIconPath": ""

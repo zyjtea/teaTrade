@@ -1,0 +1,75 @@
+<view  class="title-list">        
+         <navigator url='/pages/modifyPasd/modifyPasd'>
+               <image src='/images/test.png'></image>
+                <text>用户名</text>
+        </navigator>
+
+</view>
+<view  class="setup-list">
+        <navigator url='/pages/'>
+                <text>账户充值</text>
+                  <image src='/images/right.png'></image>
+        </navigator>
+         <navigator url="/pages/static/feedback/feedback">
+                <text>账户余额</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+         <navigator url='/pages/aboutList/aboutList'>
+                <text>收货地址</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+         <navigator  url='/pages/static/Help/Help'>
+                <text>订单查询</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+
+         <navigator  url='/pages/static/Help/Help'>
+                <text>消息</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+
+                 <navigator  url='/pages/static/Help/Help'>
+                <text>客服</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+
+<view  class="maijia-list">        
+         <navigator url='/pages/'>
+            <text>卖家功能</text>
+            <image src='/images/b.png'></image>
+        </navigator>
+
+</view>
+                 <navigator  url='/pages/pages/buiness/buiness'>
+                <text>我要供货</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+      <navigator  url='/pages/static/Help/Help'>
+                <text>交易规则</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+      <navigator  url='/pages/help/help'>
+                <text>帮助中心</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+              <navigator  url='/pages/static/Help/Help'>
+                <text>关于平台</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+              <navigator  url='/pages/static/Help/Help'>
+                <text>等级标准</text>
+                <image src='/images/b.png'></image>
+        </navigator>
+
+
+ <view class='quit' bindtap='quitFn'>
+  <text>退出登陆</text>
+  </view>
+        
+</view>
+<contact-button 
+  type="default-light" 
+  size="20"
+  session-from="weapp"
+>
+</contact-button>

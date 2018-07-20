@@ -1,0 +1,35 @@
+image {
+  width: 350rpx;
+  height: 300rpx;
+}
+
+.price,.goodname {
+  color: red;
+  size: 100rpx;
+}
+.offer {
+  color: rgb(255, 251, 0);
+}
+
+.goodbujv {
+  display: flex;
+}
+
+.good-text {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.buy {
+  width: 75px;
+  height: 22px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  /* align-self:flex-end; */
+  margin-left: 90px;
+  background: green
+  }
