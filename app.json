@@ -1,7 +1,16 @@
 {
   "pages":[
+    "pages/dingdan/dingdan",
+    "pages/daifukuan/daifukuai",
+    "pages/daifahuo/daifahuo",
+    "pages/daishohuo/daishouhuo",
+    "pages/yiquxiao/yiquxiao",
+    "pages/tuikaunzhong/tuikuaizhong",
+    "pages/order/order",
+    "pages/xiaoxi/xiaoxi",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/kefu/kefu"
   ],
   "window":{
     "backgroundTextStyle":"light",
