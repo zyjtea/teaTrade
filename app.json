@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/tab1/index",
     "pages/logs/logs",
     "pages/tab2/index",
     "pages/tab3/index",
@@ -21,7 +21,7 @@
   },
   "tabBar": {
     "list": [{
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/tab1/index",
       "text": "资讯",
       "iconPath": "",
       "selectedIconPath": ""
