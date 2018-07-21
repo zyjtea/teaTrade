@@ -2,7 +2,7 @@
 <view class="search-view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105, 195, 170, 1))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} ">
   <view class="serarch-content">
     <view class='search-icon-view'>
-        <wxc-icon class='search-icon' type='search-square' size='40' color='#69c3aa'></wxc-icon>
+     <icon class='search-icon' type='search' size='20'></icon>
     </view>
     <input placeholder="请输入搜索内容" class="search-input" maxlength="20" confirm-type="搜索" bindinput='wxSearchInput' value="{{keyword}}" bindconfirm="wxSearchFn" bindfocus="wxSerchFocus" bindblur="wxSearchBlur" type="text" >
     </input>
@@ -15,24 +15,67 @@
 <view style='height:70rpx;'></view>
 
 <swiper indicator-dots="ture"
-  autoplay="true" interval="3500" duration="400">
+  autoplay="true" interval="3500" duration="400" style='width:400px'>
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image" width="400" height="150"/>
+      <image src="{{item}}" class="slide-image" width="500px" height="600px" mode="{{item.mode}}"/>
     </swiper-item>
   </block>
 </swiper>
 
-<view class="name1">热卖
- <button class="more-btn" >更多 </button>
+<view class="section1">热卖产品
+  <button class="more-btn">更多 </button>
 </view>
 
+<view class="section2">
+   <view class="sectionA"style="height: 100px;">
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}"    src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+   </view>
+   <view class="sectionB"style="height: 100px;">
+     <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}"    src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+   </view>
+</view>
 
+<view class="section1">特价专区
+  <button class="more-btn" >更多 </button>
+</view>
 
+<view class="section2">
+   <view class="sectionA"style="height: 100px;">
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}"    src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+   </view>
+   <view class="sectionB"style="height: 100px;">
+     <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}"    src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+   </view>
+</view>
 
+<view class="section1">金牌直销
+  <button class="more-btn"  bindtap='click'>更多 </button>
+</view>
 
-
- 
-
-
-
+<view class="section2">
+   <view class="sectionA"style="height: 100px;">
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}"    src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+   </view>
+   <view class="sectionB"style="height: 100px;">
+     <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}"    src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+    <image class="pic"style="width:50%; height: 80px;" mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg">
+    </image>
+   </view>
+</view>

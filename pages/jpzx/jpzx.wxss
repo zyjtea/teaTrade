@@ -1,0 +1,72 @@
+/* pages/jpzxpage/jpzx.wxss */
+
+
+
+.search-view {
+ height: 100rpx;
+ width: 100%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.search-body{
+  width: 550rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  background-color: white;
+  border: 1px solid darkgray;
+}
+
+.search-btn {
+  width: 120rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+  background-color: white;
+  font-size: 28rpx;
+  border: 1px solid darkgray;
+}
+
+.title{
+ height: 100rpx;
+ width: 100%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+
+.first{
+ height: 70rpx;
+ width: 33%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.pic{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.third{
+ height: 70rpx;
+ width: 34%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.second{
+ height: 70rpx;
+ width: 33%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}

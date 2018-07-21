@@ -1,0 +1,22 @@
+
+<view class='search-view'>
+ <input placeholder='请输入关键词' class='search-body' confirm-type="搜索" type="text">
+ </input>
+ <button class='search-btn'>搜索 
+ </button>
+</view>
+
+<view class='title'>
+ <view class='first'>
+   <image class="pic" src="/images/classification.png.png">
+   </image>
+   <view>分类</view>
+  </view>
+
+ <view class='second'>2
+ </view>
+
+ <view class='third'>3
+ </view>
+
+</view>
