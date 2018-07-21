@@ -6,47 +6,40 @@ Page({
     addressList: []
   },
 
-  selectTap: function (e) {
-    var id = e.currentTarget.dataset.id;
-    wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/shipping-address/update',
-      data: {
-        token: wx.getStorageSync('token'),
-        id: id,
-        isDefault: 'true'
-      },
-      success: (res) => {
-        wx.navigateBack({})
+  selectTap: function(e) {
+    // var id = e.currentTarget.dataset.id;
+    wx.getStorage({
+      key: 'userName',
+      success: function (res) {
+        console.log('res.data')
       }
     })
   },
 
-  addAddess: function () {
+  addAddess: function() {
     wx.navigateTo({
-      url: "/pages/address-add/index"
+      url: "/pages/address-add/address-add"
     })
   },
 
-  editAddess: function (e) {
+  editAddess: function(e) {
     wx.navigateTo({
-      url: "/pages/address-add/index?id=" + e.currentTarget.dataset.id
+      url: "/pages/address-add/address-add?id=" + e.currentTarget.dataset.id
     })
   },
 
-  onLoad: function () {
+  onLoad: function() {
     console.log('onLoad')
-
-
   },
-  onShow: function () {
+  onShow: function() {
     this.initShippingAddress();
   },
-  initShippingAddress: function () {
+  initShippingAddress: function() {
     var that = this;
     wx.request({
       url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/shipping-address/list',
       data: {
-        token: wx.getStorageSync('token')
+        token: wx.getStorage('token')
       },
       success: (res) => {
         if (res.data.code == 0) {

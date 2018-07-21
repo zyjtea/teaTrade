@@ -1,1 +1,19 @@
 /* pages/balance/balance.wxss */
+page{
+    height: 100%;
+}
+.container{
+    background-color: #f5f5f9;
+    justify-content: initial;
+    width: 690rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: left;
+    margin-top:30rpx; 
+    border-radius: 6rpx;
+    box-sizing: border-box;
+}
+.container{
+    background-color: #f9feff;
+    justify-content: initial;
+}

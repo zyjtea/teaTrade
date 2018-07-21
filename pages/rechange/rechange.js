@@ -94,6 +94,7 @@ Page({
       })
       return
     }
-    wxpay.wxpay(app, amount, 0, "/pages/ucenter/index");
+    // wxpay.wxpay(app, amount, 0, "/pages/ucenter/index");
+    
   }
 })

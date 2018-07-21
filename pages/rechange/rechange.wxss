@@ -41,7 +41,8 @@ page{
     width: 15rpx;
     height: 24rpx;
 }
-.save-btn,
+.save-btn1,
+.save-btn2,
 .cancel-btn{
     width: 690rpx;
     height: 80rpx;
@@ -50,10 +51,6 @@ page{
     margin-top:30rpx; 
     border-radius: 6rpx;
     box-sizing: border-box;
-}
-.save-btn{
-    background-color: #e64340;
-    color:#fff;
 }
 button[type="default"]{
     background-color: #ffffff;

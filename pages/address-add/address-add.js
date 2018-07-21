@@ -3,6 +3,7 @@ var commonCityData = require('../../utils/city.js')
 var app = getApp()
 Page({
   data: {
+    receiver,
     provinces: [],
     citys: [],
     defaultProvinceCode: 2,
@@ -22,16 +23,27 @@ Page({
   },
   bindSave: function (e) {
     var that = this;
-    var linkMan = e.detail.value.linkMan;
+    var receiver = e.detail.value.receiver;
     var address = e.detail.value.address;
     var mobile = e.detail.value.mobile;
     var code = e.detail.value.code;
-
-    if (linkMan == "") {
+    console.log(receiver)
+    // wx.setStorage({
+    //   key: 'receiver',
+    //   data: receiver,
+    //   success: function(res) {},
+    //   fail: function(res) {},
+    //   complete: function(res) {},
+    // })
+    if (receiver == "") {
       wx.showModal({
         title: '提示',
         content: '请填写联系人姓名',
         showCancel: false
+      })
+      wx.setStorage({
+        key: "receiver",
+        data: receiver
       })
       return
     }
@@ -41,6 +53,10 @@ Page({
         content: '请填写手机号码',
         showCancel: false
       })
+      wx.setStorage({
+        key: "key",
+        data: "value"
+      })
       return
     }
     if (this.data.selProvince == "请选择") {
@@ -49,6 +65,10 @@ Page({
         content: '请选择地区',
         showCancel: false
       })
+      wx.setStorage({
+        key: "key",
+        data: "value"
+      })
       return
     }
     if (this.data.selCity == "请选择") {
@@ -56,6 +76,10 @@ Page({
         title: '提示',
         content: '请选择地区',
         showCancel: false
+      })
+      wx.setStorage({
+        key: "key",
+        data: "value"
       })
       return
     }
@@ -72,6 +96,10 @@ Page({
         content: '请填写详细地址',
         showCancel: false
       })
+      wx.setStorage({
+        key: "key",
+        data: "value"
+      })
       return
     }
     if (code == "") {
@@ -79,6 +107,10 @@ Page({
         title: '提示',
         content: '请填写邮编',
         showCancel: false
+      })
+      wx.setStorage({
+        key: "key",
+        data: "value"
       })
       return
     }
@@ -89,35 +121,6 @@ Page({
     } else {
       apiAddid = 0;
     }
-    wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/shipping-address/' + apiAddoRuPDATE,
-      data: {
-        token: wx.getStorageSync('token'),
-        id: apiAddid,
-        provinceId: commonCityData.cityData[this.data.selProvinceIndex].id,
-        cityId: cityId,
-        districtId: districtId,
-        linkMan: linkMan,
-        address: address,
-        mobile: mobile,
-        code: code,
-        isDefault: 'true'
-      },
-      success: function (res) {
-        if (res.data.code != 0) {
-          // 登录错误 
-          wx.hideLoading();
-          wx.showModal({
-            title: '失败',
-            content: res.data.msg,
-            showCancel: false
-          })
-          return;
-        }
-        // 跳转到结算页面
-        wx.navigateBack({})
-      }
-    })
   },
   initCityData: function (level, obj) {
     if (level == 1) {

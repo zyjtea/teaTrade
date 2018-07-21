@@ -5,6 +5,7 @@
     "pages/address-add/address-add",
     "pages/select-address/select-address",
     "pages/rechange/rechange",
-    "pages/balance/balance"
+    "pages/balance/balance",
+    "pages/payment/payment"
   ]
 }
