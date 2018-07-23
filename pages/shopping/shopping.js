@@ -1,10 +1,11 @@
 // pages/shopping/shopping.js
 Page({
   data: {
-    carts: [],               // 购物车列表
+    cartsList: [],               // 购物车列表
     hasList: false,          // 列表是否有数据
     totalPrice: 0,           // 总价，初始为0
-    selectAllStatus: false    // 全选状态，默认全选
+    selectAllStatus: false,  // 全选状态，默认全选
+
   },
   onPullDownRefresh: function () {
     setTimeout(function () {
@@ -12,12 +13,23 @@ Page({
     }, 1500)
     console.log('刷新成功!');
   },
-  onShow() {
+  onLoad: function () {
+    // wx.getStorage({
+    //   key: 'cartsList',
+    //   success: function(res) {
+    //     this.setData({
+    //       hasList: true,
+    //       cartsList: res
+    //     });
+    //   },
+    // })
+  },
+  onShow: function () {
     this.setData({
       hasList: true,
-      carts: [
-        { id: 3, title: '天福茗茶', image: '/image/s5.jpg', num: 1, price: 250.00, selected: false },
-        { id: 2, title: '普洱茶', image: '/image/s6.jpg', num: 5, price: 198.00, selected: false }
+      cartsList: [
+        { id: 3, title: '极品普洱', image: '/image/puer.jpg', num: 1, price: 250.00, guige: '25mg', grade: 'A', selected: false },
+        { id: 2, title: '致臻极品茶', image: '/image/zhen.png', num: 5, price: 198.00, selected: false }
       ]
     });
     this.getTotalPrice();
@@ -27,11 +39,11 @@ Page({
    */
   selectList(e) {
     const index = e.currentTarget.dataset.index;
-    let carts = this.data.carts;
-    const selected = carts[index].selected;
-    carts[index].selected = !selected;
+    let cartsList = this.data.cartsList;
+    const selected = cartsList[index].selected;
+    cartsList[index].selected = !selected;
     this.setData({
-      carts: carts
+      cartsList: cartsList
     });
     this.getTotalPrice();
   },
@@ -41,10 +53,10 @@ Page({
    */
   deleteList(e) {
     const index = e.currentTarget.dataset.index;
-    let carts = this.data.carts;
-    carts.splice(index, 1);
+    let cartsList = this.data.cartsList;
+    cartsList.splice(index, 1);
     this.setData({
-      carts: carts
+      cartsList: cartsList
     });
     if (!carts.length) {
       this.setData({
@@ -61,14 +73,14 @@ Page({
   selectAll(e) {
     let selectAllStatus = this.data.selectAllStatus;
     selectAllStatus = !selectAllStatus;
-    let carts = this.data.carts;
+    let cartsList = this.data.cartsList;
 
-    for (let i = 0; i < carts.length; i++) {
-      carts[i].selected = selectAllStatus;
+    for (let i = 0; i < cartsList.length; i++) {
+      cartsList[i].selected = selectAllStatus;
     }
     this.setData({
       selectAllStatus: selectAllStatus,
-      carts: carts
+      cartsList: cartsList
     });
     this.getTotalPrice();
   },
@@ -76,51 +88,25 @@ Page({
   /**
    * 绑定加数量事件
    */
-  addCount(e) {
-    const index = e.currentTarget.dataset.index;
-    let carts = this.data.carts;
-    let num = carts[index].num;
-    num = num + 1;
-    carts[index].num = num;
-    this.setData({
-      carts: carts
-    });
-    this.getTotalPrice();
-  },
-
-  /**
-   * 绑定减数量事件
-   */
-  minusCount(e) {
-    const index = e.currentTarget.dataset.index;
-    let carts = this.data.carts;
-    let num = carts[index].num;
-    if (num <= 1) {
-      return false;
-    }
-    num = num - 1;
-    carts[index].num = num;
-    this.setData({
-      carts: carts
-    });
-    this.getTotalPrice();
-  },
+  
 
   /**
    * 计算总价
    */
   getTotalPrice() {
-    let carts = this.data.carts;                  // 获取购物车列表
+    let cartsList = this.data.cartsList;                  // 获取购物车列表
     let total = 0;
-    for (let i = 0; i < carts.length; i++) {         // 循环列表得到每个数据
-      if (carts[i].selected) {                     // 判断选中才会计算价格
-        total += carts[i].num * carts[i].price;   // 所有价格加起来
+    for (let i = 0; i < cartsList.length; i++) {         // 循环列表得到每个数据
+      if (cartsList[i].selected) {                     // 判断选中才会计算价格
+        total += cartsList[i].num * cartsList[i].price;   // 所有价格加起来
       }
     }
     this.setData({                                // 最后赋值到data中渲染到页面
-      carts: carts,
+      cartsList: cartsList,
       totalPrice: total.toFixed(2)
+
     });
+
   }
 
 })
