@@ -1,6 +1,3 @@
 {
-  "navigationBarTitleText": "选择收货地址",
-  "usingComponents": {
-    "wxc-icon": "../../disk/packages/dist"
-  }
+  "navigationBarTitleText": "选择收货地址"
 }

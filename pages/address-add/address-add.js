@@ -3,7 +3,6 @@ var commonCityData = require('../../utils/city.js')
 var app = getApp()
 Page({
   data: {
-    receiver,
     provinces: [],
     citys: [],
     defaultProvinceCode: 2,
@@ -16,34 +15,25 @@ Page({
     selDistrict: '请选择',
     selProvinceIndex: 0,
     selCityIndex: 0,
-    selDistrictIndex: 0
+    selDistrictIndex: 0,
+    wxaddress: {},
+    addressList: []
   },
-  bindCancel: function () {
+  bindCancel: function() {
     wx.navigateBack({})
   },
-  bindSave: function (e) {
+  bindSave: function(e) {
     var that = this;
-    var receiver = e.detail.value.receiver;
+    var linkMan = e.detail.value.linkMan;
     var address = e.detail.value.address;
     var mobile = e.detail.value.mobile;
     var code = e.detail.value.code;
-    console.log(receiver)
-    // wx.setStorage({
-    //   key: 'receiver',
-    //   data: receiver,
-    //   success: function(res) {},
-    //   fail: function(res) {},
-    //   complete: function(res) {},
-    // })
-    if (receiver == "") {
+
+    if (linkMan == "") {
       wx.showModal({
         title: '提示',
         content: '请填写联系人姓名',
         showCancel: false
-      })
-      wx.setStorage({
-        key: "receiver",
-        data: receiver
       })
       return
     }
@@ -53,10 +43,6 @@ Page({
         content: '请填写手机号码',
         showCancel: false
       })
-      wx.setStorage({
-        key: "key",
-        data: "value"
-      })
       return
     }
     if (this.data.selProvince == "请选择") {
@@ -65,10 +51,6 @@ Page({
         content: '请选择地区',
         showCancel: false
       })
-      wx.setStorage({
-        key: "key",
-        data: "value"
-      })
       return
     }
     if (this.data.selCity == "请选择") {
@@ -76,10 +58,6 @@ Page({
         title: '提示',
         content: '请选择地区',
         showCancel: false
-      })
-      wx.setStorage({
-        key: "key",
-        data: "value"
       })
       return
     }
@@ -96,10 +74,6 @@ Page({
         content: '请填写详细地址',
         showCancel: false
       })
-      wx.setStorage({
-        key: "key",
-        data: "value"
-      })
       return
     }
     if (code == "") {
@@ -108,21 +82,19 @@ Page({
         content: '请填写邮编',
         showCancel: false
       })
-      wx.setStorage({
-        key: "key",
-        data: "value"
-      })
       return
     }
-    var apiAddoRuPDATE = "add";
-    var apiAddid = that.data.id;
-    if (apiAddid) {
-      apiAddoRuPDATE = "update";
-    } else {
-      apiAddid = 0;
-    }
+    this.setData({
+      addressData: {
+        linkMan: linkMan,
+        mobile: mobile,
+        address: address,
+        code: code
+      }
+    })
+
   },
-  initCityData: function (level, obj) {
+  initCityData: function(level, obj) {
     if (level == 1) {
       var pinkArray = [];
       for (var i = 0; i < commonCityData.cityData.length; i++) {
@@ -151,7 +123,7 @@ Page({
       });
     }
   },
-  bindPickerProvinceChange: function (event) {
+  bindPickerProvinceChange: function(event) {
     var selIterm = commonCityData.cityData[event.detail.value];
     this.setData({
       selProvince: selIterm.name,
@@ -163,7 +135,7 @@ Page({
     })
     this.initCityData(2, selIterm)
   },
-  bindPickerCityChange: function (event) {
+  bindPickerCityChange: function(event) {
     var selIterm = commonCityData.cityData[this.data.selProvinceIndex].cityList[event.detail.value];
     this.setData({
       selCity: selIterm.name,
@@ -173,7 +145,7 @@ Page({
     })
     this.initCityData(3, selIterm)
   },
-  bindPickerChange: function (event) {
+  bindPickerChange: function(event) {
     var selIterm = commonCityData.cityData[this.data.selProvinceIndex].cityList[this.data.selCityIndex].districtList[event.detail.value];
     if (selIterm && selIterm.name && event.detail.value) {
       this.setData({
@@ -182,43 +154,17 @@ Page({
       })
     }
   },
-  onLoad: function (e) {
-    var that = this;
-    this.initCityData(1);
-    var id = e.id;
-    if (id) {
-      // 初始化原数据
-      wx.showLoading();
-      wx.request({
-        url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/shipping-address/detail',
-        data: {
-          token: wx.getStorageSync('token'),
-          id: id
-        },
-        success: function (res) {
-          wx.hideLoading();
-          if (res.data.code == 0) {
-            that.setData({
-              id: id,
-              addressData: res.data.data,
-              selProvince: res.data.data.provinceStr,
-              selCity: res.data.data.cityStr,
-              selDistrict: res.data.data.areaStr
-            });
-            that.setDBSaveAddressId(res.data.data);
-            return;
-          } else {
-            wx.showModal({
-              title: '提示',
-              content: '无法获取快递地址数据',
-              showCancel: false
-            })
-          }
-        }
-      })
+  // 页面加载
+  onLoad: function(e) {
+    console.log(app.globalData.wxaddress);
+    if (app.globalData.wxaddress) {
+      this.wxaddress = app.globalData.wxaddress;
+      console.log(this.wxaddress);
     }
+
+
   },
-  setDBSaveAddressId: function (data) {
+  setDBSaveAddressId: function(data) {
     var retSelIdx = 0;
     for (var i = 0; i < commonCityData.cityData.length; i++) {
       if (data.provinceId == commonCityData.cityData[i].id) {
@@ -226,8 +172,8 @@ Page({
         for (var j = 0; j < commonCityData.cityData[i].cityList.length; j++) {
           if (data.cityId == commonCityData.cityData[i].cityList[j].id) {
             this.data.selCityIndex = j;
-            for (var k = 0; k < commonCityData.cityData[i].cityList[j].districtList.length; k++)           {
-              if (data.districtId == commonCityData.cityData[i].cityList[j].districtList[k].id)               {
+            for (var k = 0; k < commonCityData.cityData[i].cityList[j].districtList.length; k++) {
+              if (data.districtId == commonCityData.cityData[i].cityList[j].districtList[k].id) {
                 this.data.selDistrictIndex = k;
               }
             }
@@ -236,16 +182,16 @@ Page({
       }
     }
   },
-  selectCity: function () {
+  selectCity: function() {
 
   },
-  deleteAddress: function (e) {
+  deleteAddress: function(e) {
     var that = this;
     var id = e.currentTarget.dataset.id;
     wx.showModal({
       title: '提示',
       content: '确定要删除该收货地址吗？',
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           wx.request({
             url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/shipping-address/delete',
@@ -263,28 +209,41 @@ Page({
       }
     })
   },
-  readFromWx: function () {
+  readFromWx: function() {
     let that = this;
     wx.chooseAddress({
-      success: function (res) {
+      // 成功回调
+      success: function(res) {
         let provinceName = res.provinceName;
         let cityName = res.cityName;
         let diatrictName = res.countyName;
         let retSelIdx = 0;
         for (var i = 0; i < commonCityData.cityData.length; i++) {
           if (provinceName == commonCityData.cityData[i].name) {
-            let eventJ = { detail: { value: i } };
+            let eventJ = {
+              detail: {
+                value: i
+              }
+            };
             that.bindPickerProvinceChange(eventJ);
             that.data.selProvinceIndex = i;
             for (var j = 0; j < commonCityData.cityData[i].cityList.length; j++) {
               if (cityName == commonCityData.cityData[i].cityList[j].name) {
                 //that.data.selCityIndex = j;
-                eventJ = { detail: { value: j } };
+                eventJ = {
+                  detail: {
+                    value: j
+                  }
+                };
                 that.bindPickerCityChange(eventJ);
                 for (var k = 0; k < commonCityData.cityData[i].cityList[j].districtList.length; k++) {
                   if (diatrictName == commonCityData.cityData[i].cityList[j].districtList[k].name) {
                     //that.data.selDistrictIndex = k;
-                    eventJ = { detail: { value: k } };
+                    eventJ = {
+                      detail: {
+                        value: k
+                      }
+                    };
                     that.bindPickerChange(eventJ);
                   }
                 }
@@ -292,11 +251,24 @@ Page({
             }
           }
         }
-
         that.setData({
           wxaddress: res,
         });
+        app.globalData.wxaddress = res;
+        console.log(app.globalData.wxaddress);
+        that.addressList = [{
+          wxaddress: res
+        }];
+        wx.setStorage({
+          key: "addressList",
+          data: that.addressList
+        });
+
+        wx.redirectTo({
+          url: '/pages/select-address/select-address',
+        })
       }
+
     })
   }
 })

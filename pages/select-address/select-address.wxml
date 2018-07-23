@@ -3,14 +3,16 @@
     <view class="a-address" wx:for-items="{{addressList}}" wx:key="{{index}}">
       <view class="left-text {{item.isDefault? 'active':''}}" bindtap="selectTap" data-id="{{item.id}}">
         <view class="name-tel">
-          {{item.userName}} {{item.mobile}}
+          {{item.wxaddress.userName}} {{item.wxaddress.telNumber}}
         </view>
         <view class="address-box">
-          {{item.address}}
+          {{item.wxaddress.provinceName}}
+          {{item.wxaddress.cityName}}
+          {{item.wxaddress.countyName}}
+          {{item.wxaddress.detailInfo}}
         </view>
-        
       </view>
-      <wxc-icon class="right-edit" type='edit' size='35' color='#999999' bindtap="editAddess" data-id="{{item.id}}"></wxc-icon>
+      <icon class="right-edit" type='edit' size='35' color='#999999' bindtap="editAddess" data-id="{{item.id}}"></icon>
       <!--<view class="right-edit" bindtap="editAddess" data-id="{{item.id}}"></view>-->
     </view>
   </view>

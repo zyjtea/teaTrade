@@ -1,14 +1,9 @@
 <!--pages/balance/balance.wxml-->
 <view class="container">
-  <view class='userbox' style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.3))'>
-  </view>
-  <view class='a-item'>
-    <wxc-icon type='yen' size='{{iconSize-10}}' color='#666666' style='margin:10rpx 0 10rpx 0;'></wxc-icon>
-  </view>
-  <view class='my'>
-    账户余额（元）:
-    <view style='padding: 0 10rpx;color: #666666;font-weight: bold;'> balance{{balance}} </view>
-   </view>
-  </view>
-    <navigator url="/pages/rechange/rechange">充值</navigator>
-
+  <text>账户余额（元）:</text>
+  <view style='padding: 0 10rpx;color: #666666;font-weight: bold;'> {{balance}} </view>
+</view>
+<navigator class='rechange' url="/pages/rechange/rechange" open-type="redirect">
+  <image class='rechange-pic' src='/images/rechange.png'></image>
+  <text>充值</text>
+</navigator>

@@ -1,0 +1,106 @@
+page {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  background-color: #b3b3b6;
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  margin-top: 2rpx;
+}
+
+.form-box {
+  width: 80%;
+  height: 55%;
+  background-color: #fff;
+  margin-top: 2rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+}
+
+.first {
+  height: 250rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #37f525;
+}
+.close {
+  height: 30rpx;
+  width: 30rpx;
+}
+.first text {
+  font-size: 30rpx;
+  direction: ltr;
+  text-align: left;
+}
+
+.second {
+  height: 650rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #e6e0e0;
+}
+.second text {
+  font-size: 30rpx;
+  direction: ltr;
+  text-align: center;
+}
+.second2 {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  padding: 30rpx 0;
+}
+.money {
+  height: 35rpx;
+  width: 35rpx;
+}
+.third {
+  height: 250rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #e6e0e0;
+}
+.balance {
+  height: 40rpx;
+  width: 40rpx;
+  justify-content: flex-star;
+}
+
+.third text {
+  font-size: 30rpx;
+  direction: ltr;
+  text-align: left;
+  justify-content: center;
+}
+
+.right {
+  height: 35rpx;
+  width: 35rpx;
+  justify-content: flex-end;
+}
+
+.fourth {
+  height: 550rpx;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.fingerprint {
+  height: 60rpx;
+  width: 50rpx;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
