@@ -8,15 +8,119 @@
 
 <view class='title'>
  <view class='first'>
-   <image class="pic" src="/images/classification.png.png">
+   <image class="pic" style='width: 40rpx; height: 40rpx;' src="/images/classification.png">
    </image>
-   <view>分类</view>
+   <view class='fenlei'>分类</view>
   </view>
 
- <view class='second'>2
- </view>
+ <view class='second'>
+   <view class='select_box'>
+    <view class='select' catchtap='dengjiTap'>
+        <text class='select_text'>等级</text>
+        <image class='select_img' src='/images/down.png'></image> 
+    </view>
+    <view class='option_box' style='height:{{show?(dengjiData.length>5?300:dengjiData.length*60):0}}rpx;'>
+        <text class='option' style='{{index==dengjiData.length-1&&"border:0;"}}' wx:for='{{dengjiData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+    </view>
+   </view>
 
- <view class='third'>3
+     <view class='select_box'>
+    <view class='select' catchtap='biaoqianTap'>
+        <text class='select_text'>标签</text>
+        <image class='select_img' src='/images/down.png'></image> 
+    </view>
+    <cover-view class='option_box' style='height:{{show?(biaoqianData.length>5?300:biaoqianData.length*60):0}}rpx;'>
+        <text class='option' style='{{index==biaoqianData.length-1&&"border:0;"}}' wx:for='{{biaoqianData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+    </cover-view>
+   </view>
  </view>
-
 </view>
+
+<scroll-view class='jpzx' >
+  <view class='product'>
+   <view class='product-1'>
+     <view class='header'>
+       <image class='tupian'  mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg"></image>
+       <view class='wenzi'>
+         <view class='name'>店铺名</view>
+         <image class='share' style='width:40rpx;height:40rpx' src='/images/share.png'></image>
+         <view class='introduce'>店铺介绍</view>
+         <text>**********</text>
+       </view>
+     </view>
+     <view class='footer'>
+       <view class='dengji-'>
+         <text class='biaoqian'>标签</text>
+       </view>
+       <button class='get-in'>
+         <text class='get-in-name'>进入店铺</text>
+       </button>
+     </view>
+   </view>
+
+    <view class='product-2'>
+     <view class='header'>
+       <image class='tupian'  mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg"></image>
+       <view class='wenzi'>
+         <view class='name'>店铺名</view>
+         <image class='share' style='width:40rpx;height:40rpx' src='/images/share.png'></image>
+         <view class='introduce'>店铺介绍</view>
+         <text>**********</text>
+       </view>
+     </view>
+     <view class='footer'>
+       <view class='dengji-'>
+         <text class='biaoqian'>标签</text>
+       </view>
+       <button class='get-in'>
+         <text class='get-in-name'>进入店铺</text>
+       </button>
+     </view>
+   </view>
+
+    <view class='product-3'>
+     <view class='header'>
+       <image class='tupian'  mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg"></image>
+       <view class='wenzi'>
+         <view class='name'>店铺名</view>
+         <image class='share' style='width:40rpx;height:40rpx' src='/images/share.png'></image>
+         <view class='introduce'>店铺介绍</view>
+         <text>**********</text>
+       </view>
+     </view>
+     <view class='footer'>
+       <view class='dengji-'>
+         <text class='biaoqian'>标签</text>
+       </view>
+       <button class='get-in'>
+         <text class='get-in-name'>进入店铺</text>
+       </button>
+     </view>
+   </view>
+
+    <view class='product-4'>
+     <view class='header'>
+       <image class='tupian'  mode="{{item.mode}}" src="http://www.taopic.com/uploads/allimg/100610/66-1006101151380.jpg"></image>
+       <view class='wenzi'>
+         <view class='name'>店铺名</view>
+         <image class='share' style='width:40rpx;height:40rpx' src='/images/share.png'></image>
+         <view class='introduce'>店铺介绍</view>
+         <text>**********</text>
+       </view>
+     </view>
+     <view class='footer'>
+       <view class='dengji-'>
+         <text class='biaoqian'>标签</text>
+       </view>
+       <button class='get-in'>
+         <text class='get-in-name'>进入店铺</text>
+       </button>
+     </view>
+   </view>
+
+  </view>
+</scroll-view>
+
+
+
+

@@ -23,10 +23,13 @@
 .search-btn {
   width: 120rpx;
   height: 50rpx;
+  line-height: 50rpx;
   margin-left: 20rpx;
   background-color: white;
   font-size: 28rpx;
   border: 1px solid darkgray;
+  display: flex;
+  align-self: center;
 }
 
 .title{
@@ -41,32 +44,179 @@
 
 .first{
  height: 70rpx;
- width: 33%;
+ width: 30%;
  background-color:#fff;
  display: flex;
  flex-direction: row;
  align-items: center;
+ position: relative;
+ left: 20rpx;
 }
-
-.pic{
-  width: 40rpx;
-  height: 40rpx;
-}
-
-.third{
- height: 70rpx;
- width: 34%;
- background-color:#fff;
- display: flex;
- flex-direction: row;
- align-items: center;
+.fenlei{
+  font-size: 26rpx
 }
 
 .second{
  height: 70rpx;
- width: 33%;
+ width: 70%;
  background-color:#fff;
  display: flex;
  flex-direction: row;
  align-items: center;
+}
+
+.select_box{
+  background: #fff;
+  width: 80%;
+  margin: 30rpx auto;
+  position: relative;
+}
+.select{
+  width: 50%;
+  height: 60rpx;
+  border:1px solid #efefef;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  flex-direction: row
+}
+.select_text{
+  font-size:26rpx;
+  flex: 1;
+}
+.select_img{
+  width: 50rpx;
+  height: 50rpx;
+}
+.option_box{
+  position: absolute;
+  top: 60rpx;
+  width: 40%;
+  border:1px solid #fff;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-top: 0;
+  background: #fff;
+
+}
+.option{
+  display: block;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}
+
+.jpzx {
+  flex: 1;
+  background: #fff;
+  min-height: 100%;
+}
+.product-1{
+  height: 350rpx;
+  width: 100%;
+  border-top: 1rpx solid #f7f7f7;
+  border-top-width: 90%;
+  z-index: 0
+}
+.product-2{
+  height: 350rpx;
+  width: 100%;
+  border-top: 1rpx solid #f7f7f7;
+  border-top-width: 90%;
+}
+.product-3{
+  height: 350rpx;
+  width: 100%;
+  border-top: 1rpx solid #f7f7f7;
+  border-top-width: 90%;
+}
+.product-4{
+  height: 350rpx;
+  width: 100%;
+  border-top: 1rpx solid #f7f7f7;
+  border-top-width: 90%;
+  border-bottom: 1rpx solid #f7f7f7;
+  border-bottom-width: 90%;
+}
+.header{
+  height: 200rpx;
+  padding: 20rpx 30rpx;
+  line-height: 40rpx;
+}
+.tupian{
+  width: 180rpx;
+  height:180rpx;
+  position: absolute
+}
+.wenzi{
+  position: relative;
+  width: 400rpx;
+  height: 200rpx;
+  left: 200rpx;
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.name{
+height: 60rpx;
+width: 350rpx;
+font-size: 28rpx;
+font-weight: bold;
+color: red;
+}
+.share{
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  left: 50rpx
+}
+.introduce{
+display: flex;
+flex-wrap: wrap;
+font-size: 26rpx;
+height: 40rpx;
+width: 350rpx;
+}
+.footer{
+  height: 70rpx;
+  width: 100%;
+  display: flex;
+  align-items: center
+}
+.dengji-{
+  height: 50rpx;
+  width: 120rpx;
+  line-height: 50rpx;
+  position: relative;
+  left:400rpx;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+}
+.biaoqian{
+ font-size: 26rpx;
+ width:60rpx;
+ height: 40rpx;
+}
+.get-in{
+  width: 200rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+  line-height: 50rpx;
+  background-color: green;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: center;
+  visibility: center;
+  position: relative;
+  left:400rpx;
+}
+.get-in-name{
+ font-size: 26rpx;
+ justify-content: center;
+ width:180rpx;
+ height: 60rpx;
 }
