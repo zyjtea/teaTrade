@@ -1,7 +1,8 @@
 /**index.wxss**/
 .row {
   display: block;
-  margin: 0px;
+  margin: 5rpx 0 0 0px;
+  padding: 5rpx 0;
 }
 
 .col {
@@ -68,12 +69,12 @@
 }
 
 page{
-  background: #f3f7f7;
+  background: #FFFFFF;
 }
 .select_box{
   background: #fff;
   width: 30%;
-  margin: 30rpx 0 0 8.3%;
+  margin: 0 0 0 4%;
   position: relative;
 }
 .select{
@@ -101,7 +102,7 @@ page{
 }
 .option_box{
   position: absolute;
-  top: 70rpx;
+  top: 66rpx;
   width: 100%;
   border:1px solid #efefef;
   box-sizing: border-box;
@@ -117,4 +118,53 @@ page{
   font-size: 30rpx;
   border-bottom: 1px solid #efefef;
   padding: 10rpx;
+}
+.searchview{
+  margin: 20px 2rpx 0 2rpx;
+  padding: 0 0 4% 0;
+}
+
+
+.title-list {
+        display: flex-end;
+        flex-flow: row;
+        justify-content:space-between;
+        padding: 4px 0;
+        border-bottom: 1rpx solid #a2cd5a;
+        background-color:#a2cd5a;
+}
+
+.title-list image{
+        height: 28px;
+        width: 28px;
+}
+.title-list text{
+        font-size: 50rpx;
+        direction: ltr;
+        text-align: center;
+        font-weight: bold;
+        color: #FFFFFF;
+}
+
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.pic{
+  float: left;
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+  border-radius: 6rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.textview{
+  width: 152 px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
 }

@@ -1,11 +1,14 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+   app.balance=0.00;
 Page({
   data: {
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    balance:0
   },
+  onLoad: function () {
+    this.setData({
+      balance: app.globalData.balance
+    })
+  }
 })

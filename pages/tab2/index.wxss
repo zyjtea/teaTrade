@@ -1,0 +1,89 @@
+.title-list{
+        display: flex-end;
+        flex-flow: row;
+        justify-content:space-between;
+        padding: 4px 0;
+        border-bottom: 1rpx solid #a2cd5a;
+        background-color:#a2cd5a;
+}
+
+.title-list image{
+        height: 28px;
+        width: 28px;
+}
+.title-list text{
+        font-size: 50rpx;
+        direction: ltr;
+        text-align: center;
+        font-weight: bold;
+        color: #FFFFFF;
+}
+
+.row {
+  display: block;
+  margin: 5rpx 0 0 0px;
+  padding: 5rpx 0;
+}
+
+.col {
+  display: flex;
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+  font-size: 17px;
+}
+
+.col>.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9,
+.col-10, .col-11, .col-12 {
+  overflow: hidden;
+}
+
+.col-1 {
+  width: 8.33333333333333%;
+}
+
+.col-2 {
+  width: 16.6666666666666%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333333333333%;
+}
+
+.col-5 {
+  width: 41.6666666666666%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.333333333333333%;
+}
+
+.col-8 {
+  width: 66.66666666666666%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33333333333333%;
+}
+
+.col-11 {
+  width: 91.66666666666666%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.x-center {
+  text-align: center;
+}

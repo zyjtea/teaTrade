@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="form-box">
+    <view class='first'>
+      <image class='close' src='/images/close.png'></image>
+      <text>请验证指纹</text>
+    </view>
+
+    <view class="second">
+      <text>支付金额：</text>
+      <view class='second2'>
+        <image class='money' src='/images/money.png'></image>
+        <view style='padding: 0 10rpx;color: #666666;font-weight: bold;'> {{rechargeAmount}}              </view>
+      </view>
+    </view>
+
+    <view class="third">
+      <view style='display:flex;'>
+        <image class='balance' src='/images/balance.png'></image>
+        <text>余额</text>
+      </view>
+      <image class='right' src='/images/right.png'></image>
+    </view>
+    <!-- 密码输入框 -->
+    <view class="fourth">
+      <!-- <input type='text' class="password" style='background:url(/images/fingerprint.png);' maxlength='6'/> -->
+      <image class='fingerprint' src='/images/fingerprint.png'></image>
+    </view>
+  </view>
+</view>

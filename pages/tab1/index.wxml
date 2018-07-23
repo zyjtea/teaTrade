@@ -1,49 +1,94 @@
 <!--index.wxml-->
-<view class="container">
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
-  <view class="searchview" style='width:100%'>
-    <form bindsubmit="formSubmit" bindreset="formReset">
-      <view class="row">
-        <view class='col'>
-          <view class='col-5'></view>
-          <view class='col-5'><text>行情曲线</text></view>
-        </view>
+<view  class="title-list">     
+  <view class='row'>
+    <view class='col'>
+      <view class='col-2'></view>
+      <view class='col-3'></view>
+      <view class='col-4'>
+        <text>资讯</text>
       </view>
-      <view class='row'>
-        <view class='col'>
-          <view class='col-1'></view>
-          <view class='col-6'>
-            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-          时间段: {{date}}
-            </picker>
-          </view>
-          <view class='col-5'>
-            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-          至: {{date}}
-            </picker>
-          </view>
-        </view>
-      </view>
-      <view class='row'>
-        <view class='select_box'>
-          <view class='select' catchtap='selectTap'>
-            <text class='select_text'>{{selectData[index]}}</text>
-            <image class='select_img {{show&&"select_img_rotate"}}' src='/image/icon/find-off.png'></image>         
-          </view>
-          <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
-            <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
-          </view>
-        </view>
-      </view>
-    </form>
+    </view>
   </view>
 </view>
+<scroll-view scroll-y="true" scroll-with-animation="true" style='width:100%;height:100%'>
+  <view>
+    <view class="searchview" style='width:99%;border:1px solid #EEEEEF'>
+      <form bindsubmit="formSubmit" bindreset="formReset" >
+        <view class="row">
+          <view class='col'>
+            <view style='margin:0 0 0 38%'><text style='color:green;font-weight:bold;'>行情曲线</text></view>
+          </view>
+        </view>
+        <view class='row'>
+          <view class='col'>
+            <view class='col-1'></view>
+            <view class='col-6'>
+              <picker mode="date" value="{{startDate}}" start="2016" end="2018" bindchange="bindStartDateChange" fields="year" >
+                <view class='row'>
+                  <view class='col'>
+                    <view class='col-4'><text style='font-size:14px'>时间段:</text></view>
+                    <view class='col-8' style='margin:0 4% 0 7%'><input type="text" style="color:gray;border:1px solid #EFEFEF;border-radius:3px;height:70rpx" value='{{startDate}}' disabled='true'/></view>
+                  </view>
+                </view>
+              </picker>
+            </view>
+            <view class='col-5'></view>
+          </view>
+        </view>
+        <view class='row' style='display : flex ; flex-flow : row;'>
+          <view style='margin:6rpx 0 0 8.3%;'><text style='font-size:14px' decode='true' space='true'>{{pinzhong}}:</text></view>
+          <view class='select_box' style='margin:0 0 0 3%'>
+            <view class='select' catchtap='selectGoodsTap'>
+              <text class='select_text'>{{goodsData[goodsIndex]}}</text>
+              <image class='select_img {{goodsShow&&"select_img_rotate"}}' src='/image/icon/find-off.png'></image>
+            </view>
+            <view class='option_box' style='height:{{goodsShow?(goodsData.length>5?300:goodsData.length*60):0}}rpx;'>
+              <text class='option' style='{{index==goodsData.length-1&&"border:0;"}}' wx:for='{{goodsData}}' wx:key='this' data-index='{{index}}' catchtap='optionGoodsTap'>{{item}}</text>
+            </view>
+          </view>
+          <view style='margin:0 0 0 20%'>
+            <button style='height:26px ;text-align:center;vertical-align:middle;line-height:22px' bindtap='searchSubmit'><text style='font-size:14px;color:red;font-weight:bold'>查询</text></button>
+          </view>
+        </view>
+      </form>
+    </view>
+  </view>
+  <view class='row' style='margin: 40px 0 15px 0'>
+    <view style='margin:0 0 0 45%'>
+      <text style='color:green;font-weight:bold;'>公告</text>
+    </view>
+  </view>
+  <view class='row' >
+    <view wx:for="{{noticeData}}" wx:key="id" data-id="{{item.id}}" bindtap="toNoticeDetails" style='width:99%;border:1px solid #EEEEEF;margin:0 2rpx'>
+      <view class='col' style='margin:0 0 0 4%'>
+        <view class='col-3'>
+          <image class="pic" mode='aspectFill' src='{{item.pic}}'></image>
+        </view>
+        <view class='col-6'>
+          <view class='row'><text class='textview' style='font-size:14px'>{{item.title}}</text></view>
+          <view class='row'><text class='textview' style='font-size:12px;color:gray'>{{item.summary}}</text></view>
+        </view>
+        <view class='col-3' style='display: flex;flex-direction: column;justify-content: center;text-align:center;'><text style='font-size:12px;color:gray'>{{item.date}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class='row' style='margin: 40px 0 15px 0'>
+    <view style='margin:0 0 0 45%'>
+      <text style='color:green;font-weight:bold;'>新闻</text>
+    </view>
+  </view>
+  <view class='row' >
+    <view wx:for="{{newsData}}" wx:key="id" data-id="{{item.id}}" bindtap="toNewsDetails" style='width:99%;border:1px solid #EEEEEF;margin:0 2rpx'>
+      <view class='col' style='margin:0 0 0 4%'>
+        <view class='col-3'>
+          <image class="pic" mode='aspectFill' src='{{item.pic}}'></image>
+        </view>
+        <view class='col-6'>
+          <view class='row'><text class="textview" style='font-size:14px'>{{item.title}}</text></view>
+          <view class='row'><text class='textview' style='font-size:12px;color:gray'>{{item.summary}}</text></view>
+        </view>
+        <view class='col-3'style='display: flex;flex-direction: column;justify-content: center;text-align:center;'><text style='font-size:12px;color:gray' decode='true'>{{item.date}}</text></view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

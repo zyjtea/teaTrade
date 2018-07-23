@@ -6,60 +6,46 @@ Page({
     addressList: []
   },
 
-  selectTap: function (e) {
-    var id = e.currentTarget.dataset.id;
-    wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/shipping-address/update',
-      data: {
-        token: wx.getStorageSync('token'),
-        id: id,
-        isDefault: 'true'
+  selectTap: function(e) {
+
+  },
+
+  addAddess: function() {
+    wx.redirectTo({
+      url: "/pages/address-add/address-add"
+    })
+  },
+
+  editAddess: function(e) {
+    wx.redirectTo({
+      url: "/pages/address-add/address-add?id=" + e.currentTarget.dataset.id
+    })
+  },
+
+  // 页面加载
+  onLoad: function() {
+    wx.getStorage({
+      key: 'addressList',
+      success: res => {
+        this.setData({
+          addressList: res.data
+        })
+        console.log(this.data.addressList);
       },
-      success: (res) => {
-        wx.navigateBack({})
-      }
     })
-  },
-
-  addAddess: function () {
-    wx.navigateTo({
-      url: "/pages/address-add/index"
-    })
-  },
-
-  editAddess: function (e) {
-    wx.navigateTo({
-      url: "/pages/address-add/index?id=" + e.currentTarget.dataset.id
-    })
-  },
-
-  onLoad: function () {
-    console.log('onLoad')
-
+    // console.log(app.globalData.wxaddress);
+    // if (app.globalData.wxaddress) {
+    //   this.addressList = [{
+    //     wxaddress: app.globalData.wxaddress
+    //   }]
+    //   console.log(this.addressList);
+    // }
 
   },
-  onShow: function () {
+  onShow: function() {
     this.initShippingAddress();
   },
-  initShippingAddress: function () {
-    var that = this;
-    wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/user/shipping-address/list',
-      data: {
-        token: wx.getStorageSync('token')
-      },
-      success: (res) => {
-        if (res.data.code == 0) {
-          that.setData({
-            addressList: res.data.data
-          });
-        } else if (res.data.code == 700) {
-          that.setData({
-            addressList: null
-          });
-        }
-      }
-    })
-  }
+  initShippingAddress: function() {
 
+  }
 })

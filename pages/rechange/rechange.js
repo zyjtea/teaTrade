@@ -1,5 +1,6 @@
 var wxpay = require('../../utils/pay.js')
 var app = getApp()
+  
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     let recharge_amount_min = app.globalData.recharge_amount_min;
     if (!recharge_amount_min) {
       recharge_amount_min = 0;
@@ -26,59 +27,59 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  bindCancel: function () {
+  bindCancel: function() {
     wx.navigateBack({})
   },
-  bindSave: function (e) {
+  bindSave: function(e) {
     var that = this;
-    var amount = e.detail.value.amount;
+    var rechargeAmount = e.detail.value.rechargeAmount;
 
-    if (amount == "" || amount * 1 < 0) {
+    if (rechargeAmount == "" || rechargeAmount * 1 < 0) {
       wx.showModal({
         title: '错误',
         content: '请填写正确的充值金额',
@@ -86,7 +87,13 @@ Page({
       })
       return
     }
-    if (amount * 1 < that.data.recharge_amount_min * 1) {
+    else if (rechargeAmount * 1 > 0) {
+      app.globalData.rechargeAmount = parseInt(rechargeAmount);
+      wx.redirectTo({
+        url: '/pages/payment/payment'
+      })
+    }
+    if (rechargeAmount * 1 < that.data.recharge_amount_min * 1) {
       wx.showModal({
         title: '错误',
         content: '单次充值金额至少' + that.data.recharge_amount_min + '元',
@@ -94,6 +101,7 @@ Page({
       })
       return
     }
-    wxpay.wxpay(app, amount, 0, "/pages/ucenter/index");
+    // wxpay.wxpay(app, amount, 0, "/pages/ucenter/index");
+
   }
 })

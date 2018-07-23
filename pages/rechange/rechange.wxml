@@ -4,11 +4,12 @@
         <view class="row-wrap">
             <view class="label">充值金额</view>
             <view class="label-right">
-                <input name="amount" class="input" type="text" placeholder="0.00"/>
+                <input name="rechargeAmount" class="input" type="text" placeholder="0.00"/>
             </view>
         </view>
     </view>
-    <button type="warn" class="save-btn" formType="submit">立即支付</button>
+    <button type="primary" class="save-btn1" formType="submit">微信支付</button>
+    <button type="warn" class="save-btn2" formType="submit">银行卡支付</button>
     <button type="default" class="cancel-btn" bindtap="bindCancel">取消</button>
     </form>
 </view>

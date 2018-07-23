@@ -34,6 +34,12 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    teaID: 0,
+    yearID: 0,
+    readNum:{
+      'notice':[1221,758,526,142],
+      'news':[4515,3242,1032,857]
+    }
   }
 })

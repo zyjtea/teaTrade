@@ -1,0 +1,44 @@
+<view  class="title-list">      
+  <view class='row'>
+    <view class='col'>
+      <view class='col-2'>
+      </view>
+      <view class='col-3'></view>
+      <view class='col-2'>
+        <text>{{title}}</text>
+      </view>
+      <view class='col-2'></view>
+      <view class='col-2' style='margin:0 0 0 7%'>
+        <button plain='true' open-type='share' style='border:none;height:30px'><image src='/images/share.png'></image></button>
+      </view>
+    </view>
+  </view>
+</view>
+<view style='border:1px solid #EEDDDF;width:99%'>
+  <view class='row'>
+    <view class='col'>
+      <view class='col-1'></view>
+      <view class='col-10' style='text-align:center;margin:4% 0 0 0'>
+        <text>{{content.title}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='row' style='margin:0 0 4% 0;text-align:center'>
+    <view class='col'>
+      <view class='col-2'></view>
+      <view class='col-8'>
+        <view class='row'>
+          <view class='col'>
+            <view class='col-4'><text style='font-size:12px'>{{content.date}}</text></view>
+            <view class='col-4'><text style='font-size:12px'>{{content.time}}</text></view>
+            <view class='col-4'><text style='font-size:12px'>阅读:{{readnum}}</text></view>
+          </view>
+        </view>
+      </view>
+      <view class='col-2'></view>
+    </view>
+  </view>
+</view>
+<view style='padding:0;margin:0 0 0 3%;'>
+  <text style='font-size:14px' decode='true' space='true'>&nbsp;&nbsp;&nbsp;&nbsp;{{content.content}}</text>
+</view>

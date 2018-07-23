@@ -1,8 +1,9 @@
 {
-  "pages":[
-    "pages/my_index/index",
+  "pages":[    
     "pages/tab1/index",
     "pages/tab2/index",
+    "pages/show-data/data-show",
+    "pages/my_index/index",    
     "pages/tab3/index",
     "pages/tab4/index",
     "pages/address-add/address-add",
@@ -28,12 +29,14 @@
     "pages/trade/trade",
     "pages/tuikaunzhong/tuikuaizhong",
     "pages/xiaoxi/xiaoxi",
-    "pages/yiquxiao/yiquxiao"
+    "pages/yiquxiao/yiquxiao",
+    "pages/addrindex/index",
+    "pages/orders/orders"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle":"black"
   },
   "tabBar注释":{
@@ -46,27 +49,27 @@
   "tabBar": {
     "list": [{
       "pagePath": "pages/tab1/index",
-      "text": "资讯",
-      "iconPath": "",
-      "selectedIconPath": ""
+      "text": "",
+      "iconPath": "images/资讯未选.png",
+      "selectedIconPath": "images/资讯.png"
     },
     {
      "pagePath":"pages/trade/trade",
-     "text":"茶易宝",
-     "iconPath": "",
-     "selectedIconPath": ""
+     "text":"",
+     "iconPath": "images/列表未选.png",
+     "selectedIconPath": "images/列表.png"
     },
     {
       "pagePath": "pages/shopping/shopping",
-      "text": "购物车",
-      "iconPath": "",
-      "selectedIconPath": ""
+      "text": "",
+      "iconPath": "images/购物车未选.png",
+      "selectedIconPath": "images/购物车.png"
     },
     {
       "pagePath": "pages/my_index/index",
-      "text": "我的",
-      "iconPath": "",
-      "selectedIconPath": ""
+      "text": "",
+      "iconPath": "images/我的未选.png",
+      "selectedIconPath": "images/我的.png"
     }]
   },
   "networkTimeout": {
