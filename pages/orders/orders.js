@@ -5,8 +5,8 @@ Page({
     hasAddress: false,
     total: 0,
     orders: [
-      { id: 1, title: '极品普洱', image: '/image/puer.jpg', num: 1, price: 240.00 },
-      { id: 2, title: '致臻极品茶', image: '/image/zhen.png', num: 5, price: 198.00 }
+      { id: 1, goodname: '极品普洱', image: '/image/puer.jpg', byNumber: 1, price: 240.00 },
+      { id: 2, goodname: '致臻极品茶', image: '/image/zhen.png', byNumber: 5, price: 198.00 }
     ]
   },
   onLoad: function () {
@@ -48,7 +48,7 @@ Page({
     let orders = this.data.orders;
     let total = 0;
     for (let i = 0; i < orders.length; i++) {
-      total += orders[i].num * orders[i].price;
+      total += orders[i].byNumber * orders[i].price;
     }
     this.setData({
       total: total
@@ -57,7 +57,7 @@ Page({
   toPay() {
 
     wx.switchTab({
-      url: '/pages/home/home'
+      url: '/pages//'
     })
   }
 })

@@ -46,7 +46,7 @@
     height: 20rpx;
 
 }
-.cart-list .cart-pro-guige{
+.cart-list .cart-pro-size{
     width: 300rpx;
     height: 50rpx;
     line-height: 50rpx;
@@ -59,7 +59,7 @@
     width: 250rpx;
     height: 20rpx;
 }
-.cart-list .cart-pro-grade{
+.cart-list .cart-pro-lv{
   width: 300rpx;
     height: 30rpx;
     line-height: 30rpx;

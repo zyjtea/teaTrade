@@ -28,8 +28,8 @@ Page({
     this.setData({
       hasList: true,
       cartsList: [
-        { id: 3, title: '极品普洱', image: '/image/puer.jpg', num: 1, price: 250.00, guige: '25mg', grade: 'A', selected: false },
-        { id: 2, title: '致臻极品茶', image: '/image/zhen.png', num: 5, price: 198.00, selected: false }
+        { id: 3, goodname: '极品普洱', image: '/image/puer.jpg', byNumber: 1, price: 250.00, size: '25mg', lv: 'A', selected: false },
+        { id: 2, goodname: '致臻极品茶', image: '/image/zhen.png', byNumber: 5, price: 198.00, selected: false }
       ]
     });
     this.getTotalPrice();
@@ -98,7 +98,7 @@ Page({
     let total = 0;
     for (let i = 0; i < cartsList.length; i++) {         // 循环列表得到每个数据
       if (cartsList[i].selected) {                     // 判断选中才会计算价格
-        total += cartsList[i].num * cartsList[i].price;   // 所有价格加起来
+        total += cartsList[i].byNumber * cartsList[i].price;   // 所有价格加起来
       }
     }
     this.setData({                                // 最后赋值到data中渲染到页面
