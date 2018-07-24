@@ -10,11 +10,15 @@
                 <text class="cart-pro-price">￥{{item.price}}</text>
                 <view class="cart-pro-info-box"> 
                 <text class="cart-pro-guige">规格：{{item.guige}}</text>
+                
+                </view>
+                <view class="cart-pro-box">
                 <text class="cart-pro-grade">等级：{{item.grade}}</text>
+
                 </view>
                 <view class="cart-count-box">
                     
-                    <text class="cart-count-num">{{item.num}}</text>
+                    <text class="cart-count-num">数量：{{item.num}}</text>
                     
                 </view>
                 <text class="cart-del" bindtap="deleteList" data-index="{{index}}">×</text>
