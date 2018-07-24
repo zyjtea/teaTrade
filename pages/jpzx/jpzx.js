@@ -22,5 +22,9 @@ Page({
       show: !this.data.show
     });
   },
- 
+  checkin: function () {
+    wx.navigateTo({
+      url: "/pages/shop/shop?id="
+    })
+  }
 })

@@ -1,1 +1,205 @@
 /* pages/shop/shop.wxss */
+
+.search-view {
+ height: 100rpx;
+ width: 100%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.search-body{
+  width: 550rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  background-color: white;
+  border: 1px solid darkgray;
+}
+
+.search-btn {
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 20rpx;
+  background-color: white;
+  font-size: 28rpx;
+  border: 1px solid darkgray;
+  display: flex;
+  align-self: center;
+}
+
+.title{
+ height: 100rpx;
+ width: 100%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+
+.first{
+ height: 70rpx;
+ width: 30%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ position: relative;
+ left: 20rpx;
+}
+.fenlei{
+  font-size: 26rpx
+}
+
+.second{
+ height: 70rpx;
+ width: 70%;
+ background-color:#fff;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.select_box{
+  background: #fff;
+  width: 80%;
+  margin: 30rpx auto;
+  position: relative;
+}
+.select{
+  width: 50%;
+  height: 60rpx;
+  border:1px solid #efefef;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  flex-direction: row
+}
+.select_text{
+  font-size:26rpx;
+  flex: 1;
+}
+.select_img{
+  width: 50rpx;
+  height: 50rpx;
+}
+.option_box{
+  position: absolute;
+  top: 60rpx;
+  width: 40%;
+  border:1px solid #fff;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-top: 0;
+  background: #fff;
+
+}
+.option{
+  display: block;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}
+
+.header{
+  height: 200rpx;
+  padding: 20rpx 30rpx;
+  line-height: 40rpx;
+}
+.tupian{
+  width: 180rpx;
+  height:180rpx;
+  position: absolute
+}
+.wenzi{
+  position: relative;
+  width: 400rpx;
+  height: 200rpx;
+  left: 200rpx;
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.name{
+height: 60rpx;
+width: 175rpx;
+font-size: 28rpx;
+font-weight: bold;
+color: red;
+}
+.price{
+height: 60rpx;
+width: 175rpx;
+font-size: 28rpx;
+color: red;
+}
+.share{
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  left: 50rpx
+}
+.youdian{
+height: 60rpx;
+width: 175rpx;
+font-size: 28rpx;
+}
+.guige{
+height: 60rpx;
+width: 175rpx;
+font-size: 28rpx;
+}
+.footer{
+  height: 70rpx;
+  width: 100%;
+  display: flex;
+  align-items: center
+}
+.price2{  
+  height: 50rpx;
+  width: 300rpx;
+  line-height: 50rpx;
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  font-size: 26rpx;
+}
+.dengji-{
+  height: 50rpx;
+  width: 120rpx;
+  line-height: 50rpx;
+  position: relative;
+  left:100rpx;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+}
+.biaoqian{
+ font-size: 26rpx;
+ width:60rpx;
+ height: 40rpx;
+ color: #fff;
+}
+.details-btn{
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: center;
+  visibility: center;
+  position: relative;
+  left:50rpx;
+}
+.details{
+ font-size: 26rpx;
+ justify-content: center;
+ width:180rpx;
+ height: 60rpx;
+}

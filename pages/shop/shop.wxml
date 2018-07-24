@@ -1,0 +1,49 @@
+
+<view class='search-view'>
+ <input placeholder='请输入关键词' class='search-body' confirm-type="搜索" type="text">
+ </input>
+ <button class='search-btn'>搜索 
+ </button>
+</view>
+
+<view class='title'>
+ <view class='first'>
+   <image class="pic" style='width: 40rpx; height: 40rpx;' src="/images/classification.png">
+   </image>
+   <view class='fenlei'>分类</view>
+  </view>
+
+ <view class='second'>
+   <view class='select_box'>
+    <view class='select' catchtap='dengjiTap'>
+        <text class='select_text'>等级</text>
+        <image class='select_img' src='/images/down.png'></image> 
+    </view>
+    <cover-view class='option_box' style='height:{{show?(dengjiData.length>5?300:dengjiData.length*60):0}}rpx;'>
+        <text class='option' style='{{index==dengjiData.length-1&&"border:0;"}}' wx:for='{{dengjiData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+    </cover-view>
+   </view>
+ </view>
+</view>
+
+<view wx:for='{{array}}'>
+  <view class='header'>
+       <image class='tupian' src="{{item.image}}"></image>
+       <view class='wenzi'>
+         <view class='name'>{{item.name}}</view>
+         <view class='price'>{{item.price}}</view>
+         <image class='share' src='{{item.image2}}'></image>
+         <view class='youdian'>{{item.youdian}}</view>
+         <view class='guige'>{{item.guige}}</view>
+       </view>
+  </view>
+  <view class='footer'>
+      <view class='price2'>{{item.price2}}</view>
+       <view class='dengji-'>
+         <text class='biaoqian'>{{item.biaoqian}}</text>
+       </view>
+       <button class='details-btn'>
+         <text class='details'>{{item.details}}</text>
+       </button>
+  </view>
+</view>

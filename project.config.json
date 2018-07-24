@@ -33,12 +33,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "金牌直销",
-					"pathName": "pages/jpzx/jpzx"
+					"pathName": "pages/jpzx/jpzx",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "店铺",
+					"pathName": "pages/shop/shop"
 				}
 			]
 		}

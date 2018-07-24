@@ -19,9 +19,9 @@
         <text class='select_text'>等级</text>
         <image class='select_img' src='/images/down.png'></image> 
     </view>
-    <view class='option_box' style='height:{{show?(dengjiData.length>5?300:dengjiData.length*60):0}}rpx;'>
+    <cover-view class='option_box' style='height:{{show?(dengjiData.length>5?300:dengjiData.length*60):0}}rpx;'>
         <text class='option' style='{{index==dengjiData.length-1&&"border:0;"}}' wx:for='{{dengjiData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
-    </view>
+    </cover-view>
    </view>
 
      <view class='select_box'>
@@ -52,7 +52,7 @@
        <view class='dengji-'>
          <text class='biaoqian'>标签</text>
        </view>
-       <button class='get-in'>
+       <button class='get-in' bindtap='checkin'>
          <text class='get-in-name'>进入店铺</text>
        </button>
      </view>
