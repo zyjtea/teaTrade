@@ -1,11 +1,66 @@
-<view>
-  <view class='goodbujv'> 
-    <image src="../images/cha1.jpg"> </image>
-    <view class='good-text'>
-      <text class='goodname'>{{good}}</text>
-      <text class='price'>价格:￥800</text>
-      <text class='adv'>优点：***</text>
-      <button class='buy' bindtap="buy">购买</button>
+<import src="/template/quantity/index.wxml" />
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{Ogoods.imgurls}}">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="container">
+  <scroll-view scroll-y="true">
+    <view class="detail">
+      <text class="title">{{Ogoods.goodname}}</text>
+      <text class="price">￥{{Ogoods.price}}</text>
+    </view>
+    <view class="separate"></view>
+    <!-- sku选择 -->
+    <text>优点：{{Ogoods.advantage}}</text>
+    <view class="separate"></view>
+    <text>规格:{{Ogoods.size}}</text>
+    <text class="text-remark">{{Ogoods.lv}}级</text>
+    <view class="separate"></view>
+    <text>商品详情</text>
+    <block wx:for-items="{{detailImg}}" wx:key="name">
+      <image class="image_detail" src="{{item}}" />
+    </block>
+    <view class="temp"></view>
+  </scroll-view>
+  <!-- 底部悬浮栏 -->
+  <view class="detail-nav">
+    <button class="button-green" bindtap="placeOrder" data-name="cart">加入购物车</button>
+    <button class="button-red" bindtap="placeOrder" data-name="order">立即购买</button>
+  </view>
+
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <!--对话框标题-->
+    <view class="zan-panel" style="margin-top:0px">
+      <view class="zan-cell">
+        <image src="{{Ogoods.image}}" style="height:60px;width:60px;margin-right:10px" />
+        <view class="zan-cell__bd" style="">{{Ogoods.goodname}}</view>
+        <view class="zan-cell__ft" style="color:red">￥{{Ogoods.price}}</view>
+        <view class="zan-icon zan-icon-close" style="font-size: 15px;position:relative;top:-30px;right:-10px" bindtap="click_cancel"></view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd smallsize">规格:{{Ogoods.size}}</view>
+        <view class="zan-cell__ft smallsize">等级:{{Ogoods.lv}}级</view>
+      </view>
+      <view class="buy-num-box">
+        <view class="num-label">购买数量</view>
+        <view class="num-box">
+          <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+          <view class="num-input">
+            <input type="number" class='buy-number' value="{{buyNumber}}" disabled/>
+          </view>
+          <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+        </view>
+      </view>
+    </view>
+    <!--对话框按钮-->
+    <view class="btn-view" bindtap="btn_ok">
+      <text style='font-size:38rpx; letter-spacing:6rpx;'>确定</text>
     </view>
   </view>
+
+
 </view>

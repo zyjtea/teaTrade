@@ -1,12 +1,18 @@
 <view>
-  <view class='goodbujv'> 
-    <image src="../images/cha1.jpg"> </image>
+  <view class='goodbujv' wx:for='{{item}}' wx:key="this" data-id="{{item.id}}">
+    <image src="{{item.image}}"> </image>
     <view class='good-text'>
-      <text class='goodname'>{{good}}</text>
-      <text class='price'>价格:￥800</text>
-      <text class='offer'>优点：***</text>
-      <text>规格：</text>
-      <button class='buy' bindtap="buy">详情</button>
+      <text class='goods-info-1'>{{item.goodname}}</text>
+      <text class='goods-info-1' id='advantage'>优点：{{item.advantage}}</text>
+      <view class='text-container'>
+        <text class='goods-info-2'>规格：{{item.size}}</text>
+        <text class='goods-info-2'>价格:￥{{item.price}}</text>
+      </view>
+      <view class='btn-container'>
+        <view class='lv'>{{item.lv}}级</view>
+        <button class='detail' bindtap="detail" data-id="{{item.id}}">详情</button>
+      </view>
+      <view class="divLine"></view>
     </view>
   </view>
 </view>
