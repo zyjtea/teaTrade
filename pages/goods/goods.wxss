@@ -1,36 +1,218 @@
-/* pages/goods/goods.wxss */
-image {
-  width: 350rpx;
-  height: 300rpx;
-}
+@import "../../utils/wxParse/wxParse.wxss";
 
-.price,.goodname {
-  color: red;
-  size: 100rpx;
-}
-.adv {
-  color: rgb(255, 251, 0);
-}
-
-.goodbujv {
+page {
   display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.good-text {
+/* 直接设置swiper属性 */
+
+swiper {
+  height: 500rpx;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+  margin-bottom: 0rpx;
+}
+
+.detail .title {
+  font-size: 40rpx;
+  margin: 10rpx;
+  color: black;
+  text-align: justify;
+}
+
+.detail .price {
+  color: red;
+  font-size: 40rpx;
+  margin: 10rpx;
+}
+
+.line_flag {
+  width: 80rpx;
+  height: 1rpx;
+  display: inline-block;
+  margin: 20rpx auto;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  height: 1rpx;
+  margin: 20rpx 0rpx;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+.detail-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100rpx;
+}
+
+.button-green {
+  background-color: #4caf50; /* Green */
+}
+
+.button-red {
+  background-color: #f44336; /* 红色 */
+}
+
+.image_detail {
+  width: 100%;
+}
+
+button {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 50%;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.detail-nav image {
+  width: 70rpx;
+  height: 50rpx;
+  margin: 20rpx 40rpx;
+}
+
+.line_nav {
+  width: 5rpx;
+  height: 100%;
+  background-color: gainsboro;
+}
+
+/* 占位 */
+
+.temp {
+  height: 100rpx;
+}
+
+text {
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin: 10rpx;
+}
+
+.text-remark {
+  display: block;
+  font-size: 25rpx;
+  margin: 10rpx;
+}
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;*/
+}
+
+.btn-view {
+  font-size: 15px;
+  width: 100%;
+  display: flex;
+  height: 40px;
+  background: #056311;
+  color: #fff;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.zan-panel {
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.btn-cancel {
+  width: 49%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.zan-cell {
+  position: relative;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.buy-num-box {
   display: flex;
   justify-content: space-between;
-  width: 100px;
-  flex-direction: column;
+  padding: 30rpx 30rpx 48rpx 0;
+  margin-left: 30rpx;
+  border-top: 1px solid #f4f4f4;
   align-items: center;
-  /* justify-content: center; */
 }
 
-.buy {
-  width: 75px;
-  height: 22px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  /* align-self:flex-end; */
-  margin-left: 90px;
-  background: green
-  }
+.buy-num-box .num-box {
+  display: flex;
+}
+
+.buy-num-box .num-box .num-input {
+  font-size: 28rpx;
+}
+
+.buy-num-box .num-box .num-jian, .buy-num-box .num-box .num-input,
+.buy-num-box .num-box .num-jia {
+  width: 80rpx;
+  height: 64rpx;
+  line-height: 62rpx;
+  text-align: center;
+  border: 1px solid #f4f4f4;
+}
+
+.buy-number{
+  height: 100%;
+}

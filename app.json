@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/good-table/good-table",
+    "pages/goods/goods",
     "pages/my_index/index",
     "pages/tab1/index",
     "pages/tab2/index",
@@ -12,8 +14,6 @@
     "pages/daifukuan/daifukuai",
     "pages/daishohuo/daishouhuo",
     "pages/dingdan/dingdan",
-    "pages/good-table/good-table",
-    "pages/goods/goods",
     "pages/help/help",
     "pages/jpzx/jpzx",
     "pages/kefu/kefu",
