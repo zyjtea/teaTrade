@@ -3,8 +3,6 @@
     "pages/trade/trade",
     "pages/jpzx/jpzx",
     "pages/shop/shop",
-    "pages/index/index",
-    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
