@@ -3,7 +3,8 @@
 var app = getApp()
 Page({
   data: {
-    addressList: []
+    addressList: null,
+    hasAddress:false
   },
 
   selectTap: function(e) {
@@ -28,7 +29,8 @@ Page({
       key: 'addressList',
       success: res => {
         this.setData({
-          addressList: res.data
+          addressList: res.data,
+          hasAddress:true
         })
         console.log(this.data.addressList);
       },

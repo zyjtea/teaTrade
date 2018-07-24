@@ -1,3 +1,7 @@
+<view wx:if="{{!hasAddress}}" 
+style='margin-top: 300rpx;font-size:40rpx;text-align: center;color:gray'>
+您还未添加地址，请新增收货地址</view>
+<block wx:else>
 <view class="container">
   <view class="address-list">
     <view class="a-address" wx:for-items="{{addressList}}" wx:key="{{index}}">
@@ -12,14 +16,14 @@
           {{item.wxaddress.detailInfo}}
         </view>
       </view>
-      <icon class="right-edit" type='edit' size='35' color='#999999' bindtap="editAddess" data-id="{{item.id}}"></icon>
+      <!-- <icon class="right-edit" type='edit' size='35' color='#999999' bindtap="editAddess" data-id="{{item.id}}"></icon> -->
       <!--<view class="right-edit" bindtap="editAddess" data-id="{{item.id}}"></view>-->
     </view>
   </view>
-  <view class="bottom-box">
+</view>
+</block>
+<view class="bottom-box">
     <view class='arrow-right'>
       <view class="add-btn" bindtap="addAddess">新增收货地址</view>
     </view>
   </view>
-
-</view>
