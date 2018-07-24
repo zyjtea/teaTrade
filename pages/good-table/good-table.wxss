@@ -1,77 +1,35 @@
 image {
-  width: 40%;
+  width: 350rpx;
   height: 300rpx;
 }
 
-.goodname {
-  color: rgb(6, 70, 6);
+.price,.goodname {
+  color: red;
   size: 100rpx;
 }
-
-.advantage {
-  color: rgb(65, 64, 4);
+.offer {
+  color: rgb(255, 251, 0);
 }
 
 .goodbujv {
   display: flex;
-  justify-content: space-between;
 }
 
 .good-text {
   display: flex;
   justify-content: space-between;
-  width: 56%;
+  width: 100px;
   flex-direction: column;
-  /*align-items: center;*//* justify-content: center; */
+  align-items: center;
+  /* justify-content: center; */
 }
 
-.lv {
-  background: #E51C23;
-  width: 120rpx;
-  height: 50rpx;
-  line-height: 50rpx;
-  font-size: 30rpx;
-  color: #FFF;
-  letter-spacing: 4rpx;
-  margin: 0 50rpx 0 0;
-  text-align: center;
-}
-
-.detail {
-  width: 120rpx;
-  height: 52rpx;
-  line-height: 52rpx;
-  font-size: 30rpx;
-  letter-spacing: 4rpx;
-  background: #fff;
-  margin: 0 10rpx 0 0;
-  padding:0rpx 20rpx;
-}
-
-/*分割线样式*/
-
-.divLine {
-  background: rgb(234, 236, 229);
-  width: 100%;
-  height: 4rpx;
-}
-
-.goods-info-1{
-  font-size: 34rpx;
-}
-#advantage{
-  font-size: 28rpx;
-}
-.goods-info-2{
-  font-size: 30rpx;
-  color: #E51C23;
-}
-.btn-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-.text-container{
-  display: flex;
-  justify-content: space-around;
-}
+.buy {
+  width: 75px;
+  height: 22px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  /* align-self:flex-end; */
+  margin-left: 90px;
+  background: green
+  }
